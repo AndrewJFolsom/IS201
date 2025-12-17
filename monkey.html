@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Random Monkey of the Day</title>
+<style>
+    body {
+        background-color: #f7f3d6;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+    }
+    img {
+        width: 300px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    #caption {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="scratch.html">Go Back</a></li>
+
+<h1 class="card">🐒 Random Monkey of the Day 🐒</h1>
+
+<div id="monkey-container">
+    <img id="monkey-image" src="" alt="">
+    <div id="caption"></div>
+</div>
+
+<button onclick="randomMonkey()">New Monkey</button>
+
+<script>
+// A list of monkey images + funny captions
+const monkeys = [
+    { img: "http://ichef.bbci.co.uk/news/660/cpsprodpb/025B/production/_85730600_monkey2.jpg", caption: "This is Barry. Barry screams at clouds." },
+    { img: "https://4.bp.blogspot.com/-c_NpKb70LeI/UOdQEKkJS1I/AAAAAAAABf8/6_XjrkSlNhA/s1600/picture-monkey.jpg", caption: "Meet Dr. Bananas. He has 3 PhDs." },
+    { img: "https://a-z-animals.com/media/2021/05/Loudest-Animals_-Howler-Monkey-e1657130353471.jpg", caption: "This is Jamal. He stole your lunch." },
+    { img: "https://wallpapers.com/images/hd/smiling-cute-monkey-photo-xgvjb5kpp6phuczs.jpg", caption: "Sir Wigglesworth. Knighted for bravery." },
+    { img: "https://eskipaper.com/images/monkey-4.jpg", caption: "Gorble the Wise. Knows your secrets." },
+    { img: "https://i.ytimg.com/vi/hcH2Kn6A7XE/maxresdefault.jpg", caption: "Gorble the Wise. Knows your secrets." },
+    { img: "https://wallpapertag.com/wallpaper/full/d/e/d/716776-funny-monkey-wallpaper-1920x1200-for-ios.jpg", caption: "Gorble the Wise. Knows your secrets." },
+    { img: "https://theawesomedaily.com/wp-content/uploads/2023/06/monkey-19-1140x641.jpeg", caption: "Gorble the Wise. Knows your secrets." },
+    { img: "http://1.bp.blogspot.com/-N8rbdfMODtU/Umg2uXaZ_TI/AAAAAAAAAOo/KEwFAaRcxvM/s1600/funny-monkey-pictures-7.jpg", caption: "Questin. He just woke up from a nap." },
+    { img: "https://www.rd.com/wp-content/uploads/2020/12/GettyImages-707453407.jpg", caption: "Michael Phelps the monkey. He likes to swim." },
+    { img: "https://images.pond5.com/funny-monkey-taking-nap-and-footage-084997580_prevstill.jpeg", caption: "Gumbo the bored." },
+    { img: "https://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/TVSeries/CuriousGeorge_180392000-CUG._V392939162_RI_.jpg", caption: "This is George. He is very curious and likes yellow." },
+    { img: "https://wallpaperaccess.com/full/1921291.jpg", caption: "The real slim shady." },
+    { img: "https://cdnb.artstation.com/p/assets/images/images/005/937/843/large/maxime-forveille-monkey-laugh.jpg?1494855561", caption: "This is dopey. He is clumsy." },
+    { img: "https://animals.sandiegozoo.org/sites/default/files/2016-09/Monkeys_ZN.jpg", caption: "Beau the Brave. He is the tribe leader." },
+    { img: "https://tse3.mm.bing.net/th/id/OIP.Bf5OtIHktQMrwDiiqeR-9wHaE8?pid=Api&P=0&h=180", caption: "Meet long-nose Freddy. Everyone used to make fun of him until he saved the town by sniffing out a bomb." },
+    { img: "https://www.treehugger.com/thmb/TyUdVA7U-ir7bccDmknIuoc690I=/2250x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-103369957-cbb4b0a4bdb94753b36bd6af8aed29dc.jpg", caption: "The mysterious mountain monkey tribe." },
+    { img: "https://www.rd.com/wp-content/uploads/2020/12/GettyImages-697882506.jpg", caption: "Gary the Gobbler. He thinks he is an ant-eater." },
+    { img: "https://web.stanford.edu/~siegelr/borneo/monkey.jpg", caption: "Meet Dory the dumb-founded. She scares easily." },
+];
+
+// Pick a random monkey
+function randomMonkey() {
+    const random = monkeys[Math.floor(Math.random() * monkeys.length)];
+    document.getElementById("monkey-image").src = random.img;
+    document.getElementById("caption").textContent = random.caption;
+}
+
+// Load a monkey when the page opens
+randomMonkey();
+</script>
+
+</body>
+</html>
